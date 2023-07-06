@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/kbekouchi/ProjetCalcul.git'
+                git url: 'https://github.com/kbekouchi/Calculatrice.git'
 
        //          Run Maven on a Unix agent.
                 sh "./mvnw clean package"
