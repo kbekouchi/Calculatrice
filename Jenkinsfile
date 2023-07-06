@@ -21,6 +21,8 @@ pipeline {
                 // Get some code from a GitHub repository
                 git url: 'https://github.com/kbekouchi/Calculatrice.git'
 
+        //          Donner le droit pour executer MavenWrapper.
+                sh "chmod +x mvnw"
        //          Run Maven on a Unix agent.
                 sh "./mvnw clean package"
 
