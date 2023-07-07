@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/kbekouchi/Calculatrice.git'
+                git url: 'https://github.com/kbekouchi/Calculatrice.git' branch: 'main'
 
         //          Donner le droit pour executer MavenWrapper.
                 sh "chmod +x mvnw"
