@@ -47,7 +47,7 @@ pipeline {
              //       junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
                     emailext
-                        subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) s est bien deroule',
+                        subject: 'Job \"${JOB_NAME}\" (${BUILD_NUMBER}) s est bien deroule',
                         body: 'cliquez sur ${BUILD_URL} et verifier le build',
                         attachLog: true,
                         to:"bekouchi@hotmail.com"
