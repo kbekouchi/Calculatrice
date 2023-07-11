@@ -20,12 +20,14 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git url: 'https://github.com/kbekouchi/Calculatrice.git', branch: 'main'
+            }
         }
         stage('Droit d acces') {
             steps {
 
         //          Donner le droit pour executer MavenWrapper.
                 sh "chmod +x mvnw"
+            }
         }
         stage('Build') {
              steps {
@@ -36,6 +38,7 @@ pipeline {
                 // To run Maven on a Windows agent, use
                 //bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
+        }
 
             post {
                 // If Maven was able to run the tests, even if some of the test
