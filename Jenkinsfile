@@ -16,14 +16,21 @@ pipeline {
                 '''
             }
         }
-        stage('Build') {
+        stage('Recuperation du code') {
             steps {
                 // Get some code from a GitHub repository
                 git url: 'https://github.com/kbekouchi/Calculatrice.git', branch: 'main'
+        }
+        stage('Droit d acces') {
+            steps {
 
         //          Donner le droit pour executer MavenWrapper.
                 sh "chmod +x mvnw"
-       //          Run Maven on a Unix agent.
+        }
+        stage('Build') {
+             steps {
+
+                //Run Maven on a Unix agent.
                 sh "./mvnw clean package"
 
                 // To run Maven on a Windows agent, use
