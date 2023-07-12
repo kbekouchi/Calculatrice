@@ -51,7 +51,8 @@ pipeline {
 
                         body: "cliquez sur ${BUILD_URL} et verifier le build",
                         attachLog: true,
-                        to:'bekouchi@hotmail.com',
+                        compressLog: true,
+                        to:'test@jenkins',
                         recipientProviders: [upstreamDevelopers()]
 
                     }
