@@ -48,10 +48,10 @@ pipeline {
                     archiveArtifacts 'target/*.jar'
                     emailext
                         //subject: 'Job \"${JOB_NAME}\" (${BUILD_NUMBER}) s est bien deroule',
-                        subject: 'le job s est bien deroule',
-                        body: 'cliquez sur ${BUILD_URL} et verifier le build',
+                        subject: "le job s est bien deroule",
+                        body: "cliquez sur ${BUILD_URL} et verifier le build",
                         attachLog: true,
-                        to:"bekouchi@hotmail.com"
+                        to:'bekouchi@hotmail.com',
                         recipientProviders: [upstreamDevelopers()]
 
                     }
